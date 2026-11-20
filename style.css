@@ -1,0 +1,312 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #071952, #088395);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #f9a826;
+    color: #071952;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: #071952;
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f9a826;
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #088395;
+    margin: 20px 0 10px;
+}
+
+/* Hero Section */
+section img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+section[aria-labelledby="hero-heading"] {
+    text-align: center;
+}
+
+section[aria-labelledby="hero-heading"] h2 {
+    font-size: 32px;
+    border: none;
+}
+
+section[aria-labelledby="hero-heading"] p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+section[aria-labelledby="hero-heading"] a {
+    display: inline-block;
+    background-color: #e63946;
+    color: white;
+    padding: 12px 22px;
+    margin: 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+section[aria-labelledby="hero-heading"] a:hover {
+    background-color: #071952;
+}
+
+/* Lists */
+section ul {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+section ul li {
+    padding: 5px;
+}
+
+/* Labels and Select Boxes */
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+select,
+input {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+    margin: 5px 0 15px;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: #088395;
+    box-shadow: 0 0 5px rgba(8,131,149,0.3);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: #071952;
+    padding: 12px;
+}
+
+th {
+    background-color: #071952;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #e2f3f5;
+}
+
+/* Table Links */
+td a {
+    background-color: #e63946;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+td a:hover {
+    background-color: #071952;
+}
+
+/* Booking Form */
+form {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form p {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #071952;
+}
+
+/* Booking Summary */
+aside {
+    background-color: #eaf4f8;
+    padding: 25px;
+    margin-top: 25px;
+    border-left: 5px solid #088395;
+    border-radius: 8px;
+}
+
+aside h3 {
+    color: #071952;
+    margin-bottom: 15px;
+}
+
+aside dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+aside dd {
+    margin-left: 10px;
+    color: #444;
+}
+
+/* Guidelines */
+article {
+    background-color: #f8fafc;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #f9a826;
+    border-radius: 6px;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #071952;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    section[aria-labelledby="hero-heading"] h2 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
