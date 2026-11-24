@@ -19,6 +19,53 @@ function showToast(message) {
     }, 3000);
 }
 
+const menuToggle = document.querySelector(".menu-toggle");
+const headerInner = menuToggle?.closest(".header-inner");
+const mainNavigation = document.getElementById("main-navigation");
+
+if (menuToggle && headerInner && mainNavigation) {
+    headerInner.classList.add("menu-ready");
+
+    menuToggle.addEventListener("click", () => {
+        const isOpen = headerInner.classList.toggle("nav-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    });
+
+    mainNavigation.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            headerInner.classList.remove("nav-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+        });
+    });
+}
+
+const teamFilter = document.getElementById("team-filter");
+const matchList = document.getElementById("match-list");
+
+if (teamFilter && matchList) {
+    const matchCards = matchList.querySelectorAll(".match-card");
+
+    teamFilter.addEventListener("change", () => {
+        matchCards.forEach((card) => {
+            const teams = card.dataset.teams.split(/\s+/);
+            card.hidden = teamFilter.value !== "all" && !teams.includes(teamFilter.value);
+        });
+    });
+
+    matchList.parentElement.querySelectorAll(".view-switch [data-view]").forEach((button) => {
+        button.addEventListener("click", () => {
+            matchList.dataset.view = button.dataset.view;
+            matchList.parentElement.querySelectorAll(".view-switch [data-view]").forEach((viewButton) => {
+                const isActive = viewButton === button;
+                viewButton.classList.toggle("is-active", isActive);
+                viewButton.setAttribute("aria-pressed", String(isActive));
+            });
+        });
+    });
+}
+
 document.querySelectorAll('a[href="#book-ticket"]').forEach((link) => {
     link.addEventListener("click", (event) => {
         const bookingForm = document.querySelector("#book-ticket");
