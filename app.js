@@ -40,28 +40,26 @@ document.querySelectorAll("form").forEach((form) => {
     });
 });
 
-const bookingForm = document.querySelector("#book-ticket form");
-const bookingSummary = document.querySelector("#booking-summary");
+document.querySelectorAll("form").forEach((form) => {
+    const bookingSummary = form.closest("section")?.querySelector("#booking-summary");
 
-if (bookingForm && bookingSummary) {
-    const matchSelect = document.getElementById("match");
-    const standSelect = document.getElementById("stand");
-    const quantityInput = document.getElementById("quantity");
+    if (!bookingSummary) {
+        return;
+    }
+
+    const matchSelect = form.querySelector("#match");
+    const standSelect = form.querySelector("#stand");
+    const quantityInput = form.querySelector("#quantity");
     const summaryMatch = bookingSummary.querySelector("#summary-match");
     const summaryStand = bookingSummary.querySelector("#summary-stand");
     const summaryPrice = bookingSummary.querySelector("#summary-price");
     const summaryQuantity = bookingSummary.querySelector("#summary-quantity");
     const summaryTotal = bookingSummary.querySelector("#summary-total");
-    const ticketPrices = {
-        general: 1500,
-        premium: 3500,
-        vip: 7500,
-    };
 
     function updateBookingSummary() {
         const matchOption = matchSelect.selectedOptions[0];
         const standOption = standSelect.selectedOptions[0];
-        const price = ticketPrices[standSelect.value] || 0;
+        const price = Number(standOption.dataset.price) || 0;
         const quantity = Number(quantityInput.value) || 0;
         const validQuantity = Number.isInteger(quantity) && quantity >= 1 && quantity <= 10;
 
@@ -76,4 +74,4 @@ if (bookingForm && bookingSummary) {
     matchSelect.addEventListener("change", updateBookingSummary);
     standSelect.addEventListener("change", updateBookingSummary);
     quantityInput.addEventListener("input", updateBookingSummary);
-}
+});

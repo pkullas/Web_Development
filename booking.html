@@ -78,10 +78,10 @@
                 <p>
                     <label for="stand">Stand Category:</label>
                     <select id="stand" name="stand" required>
-                        <option value="">Select Stand</option>
-                        <option value="General">General - Rs.1500</option>
-                        <option value="Premium">Premium - Rs.3500</option>
-                        <option value="VIP">VIP - Rs.7500</option>
+                        <option value="" data-price="0">Select Stand</option>
+                        <option value="General" data-price="1500">General - Rs. 1,500</option>
+                        <option value="Premium" data-price="3500">Premium - Rs. 3,500</option>
+                        <option value="VIP" data-price="7500">VIP - Rs. 7,500</option>
                     </select>
                 </p>
 
@@ -124,6 +124,22 @@
                 <button type="reset">Reset Form</button>
 
             </form>
+
+            <aside id="booking-summary" aria-labelledby="summary-heading">
+                <h3 id="summary-heading">Booking Summary</h3>
+                <dl>
+                    <dt>Selected Match</dt>
+                    <dd id="summary-match">Not selected</dd>
+                    <dt>Stand</dt>
+                    <dd id="summary-stand">Not selected</dd>
+                    <dt>Ticket Price</dt>
+                    <dd id="summary-price">Rs. 0</dd>
+                    <dt>Quantity</dt>
+                    <dd id="summary-quantity">0</dd>
+                    <dt>Total Amount</dt>
+                    <dd id="summary-total">Rs. 0</dd>
+                </dl>
+            </aside>
         </section>
 
     </main>
